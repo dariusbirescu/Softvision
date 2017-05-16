@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Details";
+    this.Layout = null;
 }
 
 <div class="mine-detail">
@@ -21,7 +22,7 @@
     {
         <p>Here miners produce the precious resource of iron. By increasing the mine`s level, you increase the iron production.</p>;
     }
-    <img src="~/Content/img/mine-@(this.Model.Type).png" />
+    <img src="~/Content/img/mine-@(this.Model.Type).png" />      
     <table>
         <tr><td>Mine level: @this.Model.Level</td></tr>
         <tr><td>Production for current level: @(this.Model.Level * 13)</td></tr>
