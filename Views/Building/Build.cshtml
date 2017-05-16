@@ -1,0 +1,7 @@
+﻿@model WebApplication1.Controllers.BuildViewModel
+
+@(
+    ViewBag.Title = "Build";
+)
+
+@Html.ListBoxFor(m => m.SelectBuildingType, this.Model.BuildingTypes)

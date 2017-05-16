@@ -1,0 +1,15 @@
+﻿@model WebApplication1.Models.City
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Index</h2>
+
+<table>
+    @foreach (var building in this.Model.Buildings)
+    {
+        <tr>
+            <td class="building-type @(building.BuildingType)">@building.BuildingType</td>
+            <td class="building-type @(building.Level)">@building.Level</td>
+        </tr>
+    }
+</table>
