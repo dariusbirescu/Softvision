@@ -242,3 +242,5 @@ C:\Users\dariu\Downloads\SVV2-master\WebApplication1\obj\Debug\WebApplication1.d
 C:\Users\dariu\Downloads\SVV2-master\WebApplication1\obj\Debug\WebApplication1.pdb
 C:\Users\dariu\Downloads\SVV2-master\WebApplication1\obj\Debug\WebApplication1.Migrations.migration2.resources
 C:\Users\dariu\Downloads\SVV2-master\WebApplication1\obj\Debug\WebApplication1.csproj.GenerateResource.Cache
+C:\Users\dariu\Downloads\SVV2-master\WebApplication1\obj\Debug\WebApplication1.Migrations.troups.resources
+C:\Users\dariu\Downloads\SVV2-master\WebApplication1\obj\Debug\WebApplication1.Migrations.trouprequired.resources

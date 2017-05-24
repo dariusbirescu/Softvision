@@ -1,0 +1,31 @@
+﻿@model WebApplication1.Models.CityFilterViewModel
+@{
+    ViewBag.Title = "CityFilterView";
+}
+
+<h2>CityFilterView</h2>
+
+@using (Html.BeginForm("Index","CityFilter"))
+{
+    @Html.TextBoxFor(m=> m.Email)
+    @Html.TextBoxFor(n=> n.Name)
+    @Html.TextBoxFor(min => min.MinTroupCount)
+    @Html.TextBoxFor(max => max.MaxTroupCount)
+    <button type="submit">Submit</button>
+
+
+}
+
+<table>
+    
+        @foreach (var city in this.Model.Results)
+        {
+            <tr>
+                <td>@city.ApplicationUser.Email</td>
+
+            </tr>
+        }
+
+   </table>
+
+

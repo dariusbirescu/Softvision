@@ -23,18 +23,19 @@
 
     setInterval(UpdateResources, 500);
 
-    var getMineDetailsHTML = function (mineId) {
+    $('#mine-details-container > .close-btn').click(function () {
+        $('#mine-details-container').removeClass('show');
+    });
+
+    var getMineDetailsHTML = function (mineID) {
         $('#mine-details-container > .content').empty();
-        $('#mine-details-container > .content').load("/Mines/Details?mineId=" + mineId);
+        $('#mine-details-container > .content').load("/Mines/Details?mineID=" + mineID);
         $('#mine-details-container').addClass('show');
     };
 
     $('.mine-details-btn').click(function (e) {
-        var mineId = $(this).data('mine-id');
-        getMineDetailsHTML(mineId);
-    });//plnkr.co
-
-    $('#mine-details-container > .close-btn').click(function () {
-            $('#mine-details-container').removeClass('show');
+        var mineID = $(this).data('mine-id');
+        getMineDetailsHTML(mineID);
+        console.log('log');
     });
 });

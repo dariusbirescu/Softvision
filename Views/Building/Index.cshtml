@@ -1,15 +1,35 @@
-﻿@model WebApplication1.Models.City
-@{
+﻿@{
     ViewBag.Title = "Index";
 }
 <h2>Index</h2>
-
-<table>
+<table class="mines">
+    <tr>
+        <td>Tip</td>
+        <td>Nivel</td>
+        <td>Action</td>
+    </tr>
     @foreach (var building in this.Model.Buildings)
     {
-        <tr>
-            <td class="building-type @(building.BuildingType)">@building.BuildingType</td>
-            <td class="building-type @(building.Level)">@building.Level</td>
+        <tr class="@(building.BuildingType)">
+            @if (building.BuildingType != null)
+            {
+                <td>@(building.BuildingType.Name)</td>
+            }
+            else
+            {
+                <td>Empty</td>
+            }
+
+            <td>@building.Level</td>
+            @if (building.BuildingType != null)
+            {
+                <td>@Html.ActionLink("Details", "Details", new { BuildingId = building.BuildingId })</td>
+            }
+            else
+            {
+                <td>@Html.ActionLink("Build", "Build", new { BuildingId = building.BuildingId })</td>
+            }
+
         </tr>
     }
 </table>

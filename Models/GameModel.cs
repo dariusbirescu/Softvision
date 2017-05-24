@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -11,8 +12,10 @@ namespace WebApplication1.Models
         public virtual IList<Mine> Mines { get; set; }
         public virtual IList<Resource> Resources { get; set; }
         public virtual IList<Building> Buildings { get; set; }
+        public virtual IList<Troup> Troups { get; set; }
+        public virtual IList<TroupType> TroupTypes { get; set; }
         public string AplicationUserId { get; set; }
-        public ApplicationUser ApplicationUser { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
     }
 
     public class Resource
@@ -75,6 +78,47 @@ namespace WebApplication1.Models
         public string Name { get; set; }
         public string Description { get; set; }
     }
+
+    public class Troup
+    {
+        public int TroupId { get; set; }
+        public int TroupTypeId { get; set; }
+        public virtual TroupType TroupType { get; set; }
+        public int CityId { get; set; }
+        public virtual City City { get; set; }
+        public int TroupCount { get; set; }
+
+    }
+
+    public class TroupType
+    {
+        public int TroupTypeId { get; set; }
+        [Required]
+        [StringLength(15)]
+        [MinLength(5)]
+        [RegularExpression("[A-z]*")]
+        public string Name { get; set; }
+        [Required]
+        [Range(0,100)]
+        public double Attack { get; set; }
+        [Required]
+        [Range(0, 100)]
+        public double Defence { get; set; }
+        [Required]
+        [Range(0, 100)]
+        public int CreationSpeed { get; set; }
+    }
+
+    public class CityFilterViewModel
+    {
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public int? MinTroupCount { get; set; }
+        public int? MaxTroupCount { get; set; }
+
+        public List<City> Results { get; set; }
+    }
+
     public enum ResourceType
     {
         Wheat,

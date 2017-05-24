@@ -191,15 +191,25 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BuildingController.cs" />
+    <Compile Include="Controllers\CityFilterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MinesController.cs" />
+    <Compile Include="Controllers\TroupTypesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201705161301498_migration2.cs" />
     <Compile Include="Migrations\201705161301498_migration2.Designer.cs">
       <DependentUpon>201705161301498_migration2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705231541191_troups.cs" />
+    <Compile Include="Migrations\201705231541191_troups.Designer.cs">
+      <DependentUpon>201705231541191_troups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705231600592_trouprequired.cs" />
+    <Compile Include="Migrations\201705231600592_trouprequired.Designer.cs">
+      <DependentUpon>201705231600592_trouprequired.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -240,6 +250,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\MineStyle.css" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="mines-html.html" />
     <Content Include="Scripts\bootstrap.js" />
@@ -299,6 +310,12 @@
     <Content Include="Views\Mines\Upgrade.cshtml" />
     <Content Include="Views\Building\Index.cshtml" />
     <Content Include="Views\Building\Build.cshtml" />
+    <Content Include="Views\TroupTypes\Create.cshtml" />
+    <Content Include="Views\TroupTypes\Delete.cshtml" />
+    <Content Include="Views\TroupTypes\Details.cshtml" />
+    <Content Include="Views\TroupTypes\Edit.cshtml" />
+    <Content Include="Views\TroupTypes\Index.cshtml" />
+    <Content Include="Views\CityFilter\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -315,6 +332,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201705161301498_migration2.resx">
       <DependentUpon>201705161301498_migration2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705231541191_troups.resx">
+      <DependentUpon>201705231541191_troups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705231600592_trouprequired.resx">
+      <DependentUpon>201705231600592_trouprequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

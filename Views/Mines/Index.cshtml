@@ -1,42 +1,83 @@
 ﻿@model WebApplication1.Models.City
 
-@{
-    ViewBag.Title = "Index";
-}
+<link href="/Content/bootstrap.css" rel="stylesheet" />
+<link href="/Content/Site.css" rel="stylesheet" />
+<link href="/Content/MineStyle.css" rel="stylesheet" />
 
-<h2>Index</h2>
-<table>
-    <tr>
-        @foreach( var res in this.Model.Resources)
+
+
+<div class="container body-content">
+    <table class="resourcesTable">
+        @foreach (var res in this.Model.Resources)
         {
-            <td class="res-img @(res.Type)"><img src="~/Content/img/icon-@(res.Type).png"></td>
-            <td class="res-value @(res.Type)">@res.Value.ToString("F4")</td>    
-            <td class="res-update @(res.Type)">@res.LastUpdate.ToString()</td>
-        }
-    </tr>
+            <tr>
+                <td class="res-img@(res.Type)"><img src="~/Content//img/icon-@(res.Type).png" /></td>
+                <td class="res-type@(res.Type)">@res.Type</td>
+                <td class="res-value@(res.Type)">@res.Value.ToString("F4")</td>
+                <td class="res-update@(res.Type)">@res.LastUpdate</td>
 
-</table>
-<table class="mines">
-    @foreach (var mine in this.Model.Mines)
-    {
-        <tr class="@(mine.Type)">
-            <td><img src="~/Content/img/icon-@(mine.Type).png"></td>
-            <td>@mine.Type</td>
-            <td>@mine.Level</td>
-            <td><span data-mine-id="@mine.MineId" class="mine-details-btn">Details</span></td>
-            <td class="hourProduction" hidden>@mine.GetProductionPerHour()</td>
-        </tr>
-    }
+            </tr>
+        }
+    </table>
+
+    <div>
+        <table>
+            <tr>
+                <td><a>City 1</a></td>
+            </tr>
+            <tr>
+                <td><a>City 2</a></td>
+            </tr>
+            <tr>
+                <td><a>City 3</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="main">
+        <img id="village-image" src="~/Content/img/village-bg.jpg" />
+        <div class="mine-wrapper">
+            @foreach (var mine in this.Model.Mines)
+            {
+                <div class="mine-level mine-@(mine.Type.ToString().ToLower()) mine-@(mine.Type.ToString().ToLower())-@(mine.MineId) mine-details-btn" data-mine-id="@(mine.MineId)">@mine.Level</div>
+            }
+        </div>
+        <a href="/">
+                <div>
+                <div class="mine-level mine-wheat mine-wheat-1 mine-details-btn" data-mine-id="4"></div>
+                <div class="mine-level mine-wheat mine-wheat-2"></div>
+                <div class="mine-level mine-wheat mine-wheat-3"></div>
+                <div class="mine-level mine-wheat mine-wheat-4"></div>
+                <div class="mine-level mine-wheat mine-wheat-5"></div>
+                <div class="mine-level mine-wheat mine-wheat-6"></div>
+            </div>
+            <a href="/Mines/Details?mineID=1">
+                <div class="mine-level mine-clay mine-clay-1"></div>
+                <div class="mine-level mine-clay mine-clay-2"></div>
+                <div class="mine-level mine-clay mine-clay-3"></div>
+            </a>
+            <a href="/Mines/Details?mineID=2">
+                <div class="mine-level mine-iron mine-iron-1"></div>
+                <div class="mine-level mine-iron mine-iron-2"></div>
+            </a>
+            <a href="/Mines/Details?mineID=4">
+                <div class="mine-level mine-wood mine-wood-1"></div>
+                <div class="mine-level mine-wood mine-wood-2"></div>
+                <div class="mine-level mine-wood mine-wood-3"></div>
+            </a>
+        </div>
+                </a>
+
+    </div>
+
     <div id="mine-details-container">
         <div class="close-btn">X</div>
         <div class="content"></div>
     </div>
-</table>
 
 
-
-@section Scripts
+    @section Scripts
 {
-    <script src="~/Scripts/JavaScript/mines.js"></script>
-    <script src="~/Scripts/Date.min.js"></script>
-}
+        <script src="~/Scripts/JavaScript/mines.js"></script>
+        <script src="~/Scripts/Date.min.js"></script>
+    }
