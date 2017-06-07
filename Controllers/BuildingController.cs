@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using WebApplication1.Models;
+using DataAccess;
 
 namespace WebApplication1.Controllers
 {

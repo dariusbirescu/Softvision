@@ -7,25 +7,29 @@ using Game.Mvc.Models;
 using Microsoft.Ajax.Utilities;
 using Microsoft.AspNet.Identity;
 using WebApplication1.Models;
+using DataAccess;
+using BusinessLogic;
 
 namespace WebApplication1.Controllers
 {
     [Authorize]
     public class MinesController : Controller
     {
-        ApplicationDbContext db = new ApplicationDbContext();
+        MinesService ms;
         // GET: Mines
-
+        public MinesController()
+        {
+            ms= new MinesService();
+        }
+        
         public ActionResult Index()
         {
             var userID = this.User.Identity.GetUserId();
-            var user = db.Users.Find(userID);
-            var city = user.Cities.First();
-            this.UpdteResources(city);
+            City city = ms.UpdateResources(userID);
             return View(city);
         }
 
-        public ActionResult Details(int mineID)
+        /*public ActionResult Details(int mineID)
         {
             var userID = this.User.Identity.GetUserId();
             var user = db.Users.Find(userID);
@@ -34,24 +38,7 @@ namespace WebApplication1.Controllers
             return View(mine);
         }
 
-        private void UpdteResources(City city)
-        {
-            var start = DateTime.Now;
-            foreach (var res in city.Resources)
-            {
-                foreach (var mine in city.Mines)
-                {
-                    if (mine.Type == res.Type)
-                    {
-                        res.Value += mine.GetProductionPerHour() * (start - res.LastUpdate).TotalHours;
-                    }
-                }
-                res.LastUpdate = start;
-            }
-
-            db.SaveChanges();
-
-        }
+        
 
         [HttpPost]
         public ActionResult Upgrade(int mineID, bool fastUpgrade)
@@ -90,6 +77,6 @@ namespace WebApplication1.Controllers
             {
                 Message = $"Mine id {mineID}{fastUpgrade}"
             });
-        }
+        }*/
     }
 }

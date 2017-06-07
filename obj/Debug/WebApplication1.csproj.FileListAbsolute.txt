@@ -244,3 +244,9 @@ C:\Users\dariu\Downloads\SVV2-master\WebApplication1\obj\Debug\WebApplication1.M
 C:\Users\dariu\Downloads\SVV2-master\WebApplication1\obj\Debug\WebApplication1.csproj.GenerateResource.Cache
 C:\Users\dariu\Downloads\SVV2-master\WebApplication1\obj\Debug\WebApplication1.Migrations.troups.resources
 C:\Users\dariu\Downloads\SVV2-master\WebApplication1\obj\Debug\WebApplication1.Migrations.trouprequired.resources
+C:\Users\dariu\Downloads\SVV2-master\WebApplication1\bin\BusinessLogic.dll
+C:\Users\dariu\Downloads\SVV2-master\WebApplication1\bin\DataAccess.dll
+C:\Users\dariu\Downloads\SVV2-master\WebApplication1\bin\DataAccess.pdb
+C:\Users\dariu\Downloads\SVV2-master\WebApplication1\bin\DataAccess.dll.config
+C:\Users\dariu\Downloads\SVV2-master\WebApplication1\bin\BusinessLogic.pdb
+C:\Users\dariu\Downloads\SVV2-master\WebApplication1\bin\BusinessLogic.dll.config

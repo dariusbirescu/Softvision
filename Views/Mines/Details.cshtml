@@ -1,4 +1,4 @@
-﻿@model WebApplication1.Models.Mine
+﻿@model DataAccess.Mine
 
 @{
     ViewBag.Title = "Details";
@@ -6,19 +6,19 @@
 }
 
 <div class="mine-detail">
-    @if (this.Model.Type == WebApplication1.Models.ResourceType.Wheat)
+    @if (this.Model.Type == DataAccess.ResourceType.Wheat)
     {
         <p>Your population`s food is produced here. By increasing the farm`s level, you increase its crop production.</p>;
     }
-    @if (this.Model.Type == WebApplication1.Models.ResourceType.Clay)
+    @if (this.Model.Type ==DataAccess.ResourceType.Clay)
     {
         <p>Clay is produced here. By increasing its level, you increase the clay production.</p>;
     }
-    @if (this.Model.Type == WebApplication1.Models.ResourceType.Wood)
+    @if (this.Model.Type == DataAccess.ResourceType.Wood)
     {
         <p>The woodcutter cuts down trees in order to produce lumber. The further you extend the woodcutter, the more lumber is produced</p>;
     }
-    @if (this.Model.Type == WebApplication1.Models.ResourceType.Iron)
+    @if (this.Model.Type == DataAccess.ResourceType.Iron)
     {
         <p>Here miners produce the precious resource of iron. By increasing the mine`s level, you increase the iron production.</p>;
     }
